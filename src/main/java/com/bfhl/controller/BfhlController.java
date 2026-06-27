@@ -22,6 +22,11 @@ public class BfhlController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("OK");
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ResponseDTO> handleError(Exception e) {
         ResponseDTO err = new ResponseDTO();
